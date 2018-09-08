@@ -5,11 +5,10 @@ set -uox pipefail
 set_sh_default()
 {
     while true; do
-        read -p "Do you wish to change default shell to zsh?
-Specifically state 'Yes' if so
+        read -p "Do you wish to change default shell to zsh? [Y/n]
 " yn
         case $yn in
-            Yes ) chsh -s /bin/zsh; break;;
+            Y ) chsh -s /bin/zsh; break;;
             * ) echo "Continuing without setting zsh to default"; break;;
         esac
     done
@@ -18,10 +17,10 @@ Specifically state 'Yes' if so
 # In case zsh is not installed yet, then why you tring to config
 if ! type "zsh" > /dev/null; then
     while true; do
-        read -p "Do you wish to install zsh?
+        read -p "Do you wish to install zsh? [Y/n]
 " yn
         case $yn in
-            Yes ) sudo apt-get install zsh; set_sh_default; break;;
+            Y ) sudo apt-get install zsh; set_sh_default; break;;
             * ) echo "Continuing without installing tmux"; break;;
         esac
     done

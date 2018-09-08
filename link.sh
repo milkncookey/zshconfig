@@ -8,7 +8,7 @@ $DIR/install_zsh.sh
 
 rm -rf $BACKUP_DIR
 mkdir -p $BACKUP_DIR
-[ -e ~/.oh_my_zsh ] && mv ~/.oh_my_zsh $BACKUP_DIR
+[ -e ~/.oh-my-zsh ] && mv ~/.oh-my-zsh $BACKUP_DIR
 [ -e ~/.zshrc ]     && mv ~/.zshrc $BACKUP_DIR
-ln -sf $DIR/oh_my_zsh ~/.oh_my_zsh
+ln -sf $DIR/oh-my-zsh ~/.oh-my-zsh
 ln -sf $DIR/zshrc ~/.zshrc
