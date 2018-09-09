@@ -20,9 +20,9 @@ if ! type "zsh" > /dev/null; then
         read -p "Do you wish to install zsh? [Y/n]
 " yn
         case $yn in
-            Y ) sudo apt-get install zsh; set_sh_default; break;;
+            Y ) sudo apt-get install zsh; break;;
             * ) echo "Continuing without installing tmux"; break;;
         esac
     done
 fi
-
+set_sh_default
