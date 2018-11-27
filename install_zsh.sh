@@ -14,7 +14,7 @@ set_sh_default()
     done
 }
 
-# In case zsh is not installed yet, then why you tring to config
+# In case zsh is not installed yet, ask to install it
 if ! type "zsh" > /dev/null; then
     while true; do
         read -p "Do you wish to install zsh? [Y/n]
@@ -25,4 +25,8 @@ if ! type "zsh" > /dev/null; then
         esac
     done
 fi
-set_sh_default
+
+# If zsh is installed, ask to set shell default to zsh
+if type "zsh" > /dev/null; then
+    set_sh_default
+fi
